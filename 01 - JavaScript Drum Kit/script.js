@@ -13,5 +13,7 @@ window.addEventListener('keydown', function (evt) {
   audio.play();
   key.classList.add('playing');
 
-
 });
+
+const keys = document.querySelectorAll('.key');
+keys.map(key => key.addEventListener('transitioned', removeTransition));
