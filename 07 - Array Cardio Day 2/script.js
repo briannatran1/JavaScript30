@@ -17,13 +17,15 @@ const comments = [
   { text: 'Nice Nice Nice!', id: 542328 }
 ];
 
+const currentYear = (new Date()).getFullYear();
+
 // Some and Every Checks
 // Array.prototype.some() // is at least one person 19 or older?
-const some = people.some(person => 2024 - person.year >= 19);
+const some = people.some(person => currentYear - person.year >= 19);
 console.log('some result:', some);
 
 // Array.prototype.every() // is everyone 19 or older?
-const every = people.every(person => 2024 - person.year >= 19);
+const every = people.every(person => currentYear - person.year >= 19);
 console.log('every result:', every);
 
 // Array.prototype.find()
