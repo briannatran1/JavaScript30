@@ -10,10 +10,14 @@ function makeGreen() {
 }
 
 // Regular
+console.log('hello');
 
 // Interpolated
+console.log('hello i am a %s string!', 'silly');
+console.log(`Hello I am ${'a string'}`);
 
 // Styled
+console.log('%c I am some great text', 'font-size: 50px; background: red;');
 
 // warning!
 
