@@ -23,10 +23,16 @@ console.log('%c I am some great text', 'font-size: 50px; background: red;');
 console.warn('OH NOOO');
 
 // Error :|
+console.error('Shit!');
 
 // Info
+console.info('Crocodiles eat 3-4 people per year');
 
 // Testing
+const p = document.querySelector('p');
+console.assert(p.classList.contains('ouch'), 'That is wrong');
+
+console.assert(1 === 2, 'That is wrong');
 
 // clearing
 
