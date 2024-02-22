@@ -20,6 +20,7 @@ console.log(`Hello I am ${'a string'}`);
 console.log('%c I am some great text', 'font-size: 50px; background: red;');
 
 // warning!
+console.warn('OH NOOO');
 
 // Error :|
 
