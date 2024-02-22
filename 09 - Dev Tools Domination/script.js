@@ -38,9 +38,40 @@ console.assert(1 === 2, 'That is wrong');
 console.clear();
 
 // Viewing DOM Elements
+console.log(p);
+console.dir(p);
 
 // Grouping together
+dogs.forEach(dog => {
+  // console.group(`${dog.name}`);
+  console.groupCollapsed(`${dog.name}`);
+  console.log(`This is ${dog.name}`);
+  console.log(`${dog.name} is ${dog.age} years old`);
+  console.groupEnd(`${dog.name}`);
+});
 
 // counting
+console.count('Wes');
+console.count('Steve');
+console.count('Wes');
+console.count('Steve');
+console.count('Wes');
 
 // timing
+console.time('fetching data');
+
+const endpoint = 'https://api.github.com/users/briannatran1';
+
+/** fetches data from github api */
+async function fetchData() {
+  const resp = await fetch(endpoint);
+  const data = await resp.json();
+
+  console.timeEnd('fetching data');
+  console.log(data);
+}
+
+fetchData();
+
+// table
+console.table(dogs);
