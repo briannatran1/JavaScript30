@@ -35,6 +35,7 @@ console.assert(p.classList.contains('ouch'), 'That is wrong');
 console.assert(1 === 2, 'That is wrong');
 
 // clearing
+console.clear();
 
 // Viewing DOM Elements
 
