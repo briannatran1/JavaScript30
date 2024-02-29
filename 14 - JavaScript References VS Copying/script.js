@@ -43,6 +43,10 @@ const team3 = [].concat(players);
 
 // or use the new ES6 Spread
 const team4 = [...players];
+team4[3] = 'heeee hawwww';
+console.log(team4);
+
+const team5 = Array.from(players);
 
 // now when we update it, the original one isn't changed
 
@@ -55,9 +59,26 @@ const person = {
 };
 
 // and think we make a copy:
+// take a blank obj, fold in all props from our obj, 3rd arg: fold in our own props
+const cap2 = Object.assign({}, person, { number: 99 });
+console.log(cap2);
 
 // how do we take a copy instead?
 
 // We will hopefully soon see the object ...spread
+const cap3 = { ...person };
 
 // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+const wes = {
+  name: 'Wes',
+  age: 100,
+  social: {
+    twitter: '@wesbos',
+    facebook: 'wesbos.developer'
+  }
+};
+
+console.clear();
+console.log(wes);
+
+const dev = Object.assign({}, wes);
