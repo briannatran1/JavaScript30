@@ -14,13 +14,21 @@ function addItem(evt) {
   };
 
   items.push(item);
+  populateList(items, itemsList);
   // this = form element
   this.reset();
 }
 
-/** adds item to list page */
-function populateList() {
-
+/** creates list item with a label and adds to HTML */
+function populateList(plates = [], platesList) {
+  platesList.innerHTML = plates.map((plate, idx) => {
+    return `
+      <li>
+        <input type="checkbox" data-index=${idx} id="item${idx}" ${plate.done ? 'checked' : ''} />
+        <label for="item${idx}">${plate.text}</label>
+      </li>
+    `;
+  }).join('');
 }
 
 addItems.addEventListener('submit', addItem);
