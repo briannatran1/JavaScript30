@@ -19,7 +19,7 @@ function addItem(evt) {
   this.reset(); // this = form element
 }
 
-/** creates list item with a label and adds to HTML */
+/** creates list item with a label and adds to HTML on page load */
 function populateList(plates = [], platesList) {
   platesList.innerHTML = plates.map((plate, idx) => {
     return `
@@ -31,6 +31,20 @@ function populateList(plates = [], platesList) {
   }).join('');
 }
 
-addItems.addEventListener('submit', addItem);
+/** toggles done property */
+function toggleDone(evt) {
+  const el = evt.target;
+  const index = el.dataset.index;
 
+  if (!el.matches('input')) {
+    return; // skip this unless it's and input
+  }
+
+  items[index].done = !items[index].done;
+  localStorage.setItem('items', JSON.stringify(items)); // updates local storage
+  populateList(items, itemsList);
+}
+
+addItems.addEventListener('submit', addItem);
+itemsList.addEventListener('click', toggleDone); // event delegation -- listens to parent
 populateList(items, itemsList);
